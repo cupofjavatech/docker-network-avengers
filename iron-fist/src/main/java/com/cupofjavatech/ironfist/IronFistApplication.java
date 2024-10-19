@@ -1,4 +1,4 @@
-package com.cupofjavatech.iron_fist;
+package com.cupofjavatech.ironfist;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

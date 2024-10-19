@@ -1,4 +1,4 @@
-package com.cupofjavatech.iron_fist;
+package com.cupofjavatech.ironfist;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
