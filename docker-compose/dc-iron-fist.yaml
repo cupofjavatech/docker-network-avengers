@@ -1,0 +1,19 @@
+version: "3.7"
+
+services:
+
+  iron-fist:
+    image: "cupofjavatech/iron-fist:v1"
+    container_name: iron-fist
+    ports:
+      - "8081:8081"
+    environment:
+      URL_RED_HOOD: http://host.docker.internal:8082/red-hood
+    networks:
+      - my-network
+
+
+networks:
+  my-network:
+    driver: bridge
+    external: true

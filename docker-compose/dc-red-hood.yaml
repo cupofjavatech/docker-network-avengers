@@ -1,0 +1,18 @@
+version: "3.7"
+
+services:
+
+  red-hood:
+    image: "cupofjavatech/red-hood:v1"
+    container_name: red-hood
+    ports:
+      - "8082"
+    environment:
+      URL_IRON_FIST: http://iron-fist:8081/iron-fist
+    networks:
+      - my-network
+
+networks:
+  my-network:
+    driver: bridge
+    external: true
