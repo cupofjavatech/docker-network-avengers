@@ -31,3 +31,9 @@ http://localhost:8081/iron-fist/calling-buddy
 http://localhost:8082/red-hood  
 http://localhost:8082/red-hood/calling-buddy  
 
+Kubernetes - k8s - Service and Deployment files
+----------------------------
+kubectl apply -f ./k8s/k8s-deployment.yaml
+kubectl apply -f ./k8s/k8s-iron-firt.yaml
+kubectl apply -f ./k8s/k8s-red-hood.yaml
+
