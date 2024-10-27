@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redhood-deploy
+  labels:
+    app: redhood-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: redhood
+  template:
+    metadata:
+      labels:
+        app: redhood
+    spec:
+      containers:
+      - name: redhood
+        image: cupofjavatech/red-hood:v1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8082
+        env:
+          - name: URL_IRON_FIST
+            value: "http://${IRONFIST_SERVICE_SERVICE_HOST}:8081/iron-fist"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: redhood-service
+spec:
+  selector:
+    app: redhood
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 8082
+      targetPort: 8082

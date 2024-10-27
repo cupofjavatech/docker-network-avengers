@@ -6,9 +6,10 @@ services:
     image: "cupofjavatech/red-hood:v1"
     container_name: red-hood
     ports:
-      - "8082"
+      - "8082:8082"
     environment:
       URL_IRON_FIST: http://iron-fist:8081/iron-fist
+#      URL_IRON_FIST: http://localhost:8081/red-hood   -       doesn't work with container       
     networks:
       - my-network
 
