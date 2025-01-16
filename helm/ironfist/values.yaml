@@ -1,0 +1,16 @@
+app:
+  name: ironfist
+  image:
+    name: cupofjavatech/iron-fist
+    tag: v1
+
+replicaCount: 1
+
+service:
+  containerPort: 8081
+  targetPort: 8081
+
+env:
+  name1: URL_RED_HOOD
+  value1: "http://redhood-service:8082/red-hood"
+  enabled1: "true"

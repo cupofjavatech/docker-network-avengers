@@ -1,0 +1,33 @@
+{{- define "avengers-common.deployment" -}}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Chart.Name }}-deploy
+  labels:
+    app: {{ .Chart.Name }}-deploy
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ .Chart.Name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Chart.Name }}
+    spec:
+      containers:
+      - name: {{ .Chart.Name }}-pod
+        image: {{ .Values.app.image.name }}:{{ .Values.app.image.tag }}
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: {{ .Values.service.containerPort }}
+        env:
+        {{- if .Values.env.enabled1 }}
+          - name: {{ .Values.env.name1 }}
+            value: {{ .Values.env.value1 }}
+        {{- end }}
+        {{- if .Values.env.enabled2 }}
+          - name: {{ .Values.env.name2 }}
+            value: {{ .Values.env.value3 }}
+        {{- end }}
+{{- end -}}

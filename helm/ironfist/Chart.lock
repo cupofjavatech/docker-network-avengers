@@ -1,0 +1,6 @@
+dependencies:
+- name: avengers-common
+  repository: file://../avengers-common
+  version: 0.1.0
+digest: sha256:65347f06f9f471f912b0845537323a0a960a0c308c591068f5171ef7dbcc02c3
+generated: "2024-12-30T19:20:42.5493562+05:30"

@@ -1,0 +1,11 @@
+apiVersion: v2
+name: redhood
+description: Kubernetes helm chart for Red-Hood
+type: application
+version: 0.1.0
+appVersion: "1.0.0"
+
+dependencies:
+  - name: "avengers-common"
+    version: 0.1.0
+    repository: file://../avengers-common

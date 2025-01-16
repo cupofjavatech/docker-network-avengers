@@ -1,0 +1,9 @@
+dependencies:
+- name: ironfist
+  repository: file://../ironfist
+  version: 0.1.0
+- name: redhood
+  repository: file://../redhood
+  version: 0.1.0
+digest: sha256:3ad9c335ea9a711cb609adff5743a81068e77e3caf922d41bf541824872285ee
+generated: "2024-12-30T21:25:33.0307006+05:30"

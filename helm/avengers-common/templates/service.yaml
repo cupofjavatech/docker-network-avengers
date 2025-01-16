@@ -1,0 +1,14 @@
+{{- define "avengers-common.service" -}}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Chart.Name }}-service
+spec:
+  selector:
+    app: {{ .Chart.Name }}
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: {{ .Values.service.containerPort }}
+      targetPort: {{ .Values.service.targetPort }}
+{{- end -}}
